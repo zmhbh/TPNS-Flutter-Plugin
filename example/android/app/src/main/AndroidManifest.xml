@@ -26,5 +26,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+    <meta-data
+        android:name="XG_SERVER_SUFFIX"
+        android:value="tpns.sh.tencent.com" />
     </application>
 </manifest>

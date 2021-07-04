@@ -52,8 +52,8 @@ android {
 //                XG_ACCESS_KEY : "替换自己的ACCESS_KEY", //信鸽官网注册所得ACCESS_KEY
 //        ]
         manifestPlaceholders = [
-                XG_ACCESS_ID : "1500004343",  //信鸽官网注册所得ACCESS_ID
-                XG_ACCESS_KEY: "ANCVHDQ0DO3E", //信鸽官网注册所得ACCESS_KEY
+                XG_ACCESS_ID : "1580005393",  //信鸽官网注册所得ACCESS_ID
+                XG_ACCESS_KEY: "AS6B390WGQ81", //信鸽官网注册所得ACCESS_KEY
         ]
     }
 
