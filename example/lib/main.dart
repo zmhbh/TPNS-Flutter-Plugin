@@ -15,7 +15,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   final XgFlutterPlugin tpush = new XgFlutterPlugin();
 
   @override
@@ -49,9 +48,11 @@ class _MyAppState extends State<MyApp> {
       },
       onReceiveNotificationResponse: (Map<String, dynamic> msg) async {
         print("flutter onReceiveNotificationResponse $msg");
+        _showAlert('onReceiveNotificationResponse');
       },
       onReceiveMessage: (Map<String, dynamic> msg) async {
         print("flutter onReceiveMessage $msg");
+        _showAlert('onReceiveMessage');
       },
       xgPushDidSetBadge: (String msg) async {
         print("flutter xgPushDidSetBadge: $msg");
@@ -89,7 +90,18 @@ class _MyAppState extends State<MyApp> {
     // tpush.configureClusterDomainName("tpns.hk.tencent.com");
 
     /// 启动TPNS服务
-    tpush.startXg("1600007893", "IX4BGYYG8L4L");
+    ///
+    var xgAndroidApi = tpush.getXgAndroidApi();
+
+    xgAndroidApi.enableOtherPush();
+
+    tpush.startXg("1580005393", "AS6B390WGQ81");
+
+    String otherPushToken = await xgAndroidApi.getOtherPushToken();
+    String otherpushType = await xgAndroidApi.getOtherPushType();
+    String combo = "$otherPushToken,,$otherpushType";
+    print("jingyu: $combo");
+    _showAlert(combo);
   }
 
   void _showAlert(String title) {

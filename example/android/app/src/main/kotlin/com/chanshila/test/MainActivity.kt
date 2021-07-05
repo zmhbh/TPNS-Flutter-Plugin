@@ -1,4 +1,4 @@
-package com.example.tpns_flutter_plugin_example
+package com.chanshila.test
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

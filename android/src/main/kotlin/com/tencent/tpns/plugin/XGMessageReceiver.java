@@ -103,6 +103,7 @@ public class XGMessageReceiver extends XGPushBaseReceiver {
         String content = notifiShowedRlt.getContent();
         String customContent = notifiShowedRlt.getCustomContent();
         String title = notifiShowedRlt.getTitle();
+        notifiShowedRlt.getPushChannel();
         int notificationActionType = notifiShowedRlt.getNotificationActionType();
         long msgId = notifiShowedRlt.getMsgId();
         String activityName = notifiShowedRlt.getActivityName();
