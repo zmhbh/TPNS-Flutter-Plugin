@@ -94,6 +94,17 @@ class _MyAppState extends State<MyApp> {
     var xgAndroidApi = tpush.getXgAndroidApi();
 
     xgAndroidApi.enableOtherPush();
+    bool isMeizu = await xgAndroidApi.isMeizuRom();
+    if (isMeizu) {
+      xgAndroidApi.setMzPushAppId(appId: '142490');
+      xgAndroidApi.setMzPushAppKey(appKey: '7975e698000f4f42be2ed3ba58b6ccbd');
+    }
+
+    bool isXiaoMi = await xgAndroidApi.isMiuiRom();
+    if (isXiaoMi) {
+      xgAndroidApi.setMiPushAppId(appId: '2882303761519979397');
+      xgAndroidApi.setMiPushAppKey(appKey: '5441997950397');
+    }
 
     tpush.startXg("1580005393", "AS6B390WGQ81");
 
